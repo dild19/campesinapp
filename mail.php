@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <?php
 	
 	if( empty( $_POST['token'] ) ){
@@ -34,7 +34,7 @@
 		<?php echo $message; ?>
 		<br />
 		<br />
-		============================================================
+		
 	<?php
 	$body = ob_get_contents();
 	ob_end_clean();
@@ -51,7 +51,7 @@
 
 	
 ?>
-=======
+
 <?php
 	
 	if( empty( $_POST['token'] ) ){
@@ -87,12 +87,12 @@
 		<?php echo $message; ?>
 		<br />
 		<br />
-		============================================================
+		
 	<?php
 	$body = ob_get_contents();
 	ob_end_clean();
 	
-	$to = 'support@fruitkha.com';
+	$to = 'infor@campesinapp.com';
 
 	$s = mail($to,$subject,$body,$headers,"-t -i -f $from");
 
@@ -104,4 +104,3 @@
 
 	
 ?>
->>>>>>> 76b3984dbea44ccfaa94e566f59a3930c688e3d3

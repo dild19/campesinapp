@@ -30,6 +30,12 @@
 	<link rel="stylesheet" href="assets/css/main.css">
 	<!-- responsive -->
 	<link rel="stylesheet" href="assets/css/responsive.css">
+	<!--select que busca-->
+	<!-- 1. jQuery (OBLIGATORIO) -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+	<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+	<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
 </head>
 <body>
@@ -60,32 +66,27 @@
 						<nav class="main-menu">
 							<ul>
 								<li>
-									<img src="assets/img/casa.png" width="60px" height="60px">
-									<a href="index.html">Inicio</a>
+									<a href="index.html"><img alt="Inicio" src="assets/img/house-solid-full.svg" width="50px" height="50px" title="Inicio"></a>																		
 								</li>
 								<li>
-									<img src="assets/img/socios.png" width="60px" height="60px">
-									<a href="socios.html">Socios</a>									
+									<a href="socios.html"><img alt="Socios" src="assets/img/handshake-solid-full.svg" width="50px" height="50px" title="Socios"></a>																		
 								</li>
 								<li>
-									<img src="assets/img/cart.png" width="60px" height="60px">
-									<a href="mercados.html">Mercados</a>
+									<a href="mercados.html"><img alt="Mercados" src="assets/img/basket-shopping-solid-full.svg" width="50px" height="50px" title="Mercados"></a>									
 								</li>
 								<li>
-									<img src="assets/img/vinculate.png" width="60px" height="60px">
-									<a href="vinculate.html">Vincúlate</a>
+									<a href="vinculate.html"><img alt="Vinculate" src="assets/img/vinculate.svg" width="50px" height="50px" title="Regístrate"></a>									
 								</li>
 								<li>
-									<img src="assets/img/nosotros.png" width="60px" height="60px">
-									<a href="nosotros.html">Nosotros</a></li>
+									<a href="nosotros.html"><img alt="Nosotros" src="assets/img/users-solid-full.svg" width="50px" height="50px" title="Nosotros"></a>					
+								</li>
 								<li>
-									<img src="assets/img/contacto.png" width="60px" height="60px">
-									<a href="contact.html">Contacto</a>
+									<a href="contact.html"><img alt="Contacto" src="assets/img/headset-solid-full.svg" width="50px" height="50px" title="Contacto"></a>
 								</li>
 								<li>
 									<div class="header-icons">
 										<a class="shopping-cart" href="cart.html"><i class="fas fa-shopping-cart"></i></a>
-										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
+										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>							
 									</div>
 								</li>
 							</ul>
@@ -118,49 +119,95 @@
 		</div>
 	</div>
 	<!-- end search arewa -->
-	
+
 	<!-- breadcrumb-section -->
 	<div class="breadcrumb-section breadcrumb-bg">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-8 offset-lg-2 text-center">
 					<div class="breadcrumb-text">
-						<div class="coupon-section">
-						<h3>Formulario de registro</h3>
-						<div class="coupon-form-wrap">
-							<form action="index.html">
-								<p><input type="text" placeholder="Nombres"></p>
-								<p><input type="text" placeholder="Apellidos"></p>
-								<p><input type="text" placeholder="Edad"></p>
-								<p><select name="tipoId">
-										<option value="1">Seleccione su tipo de documento</option>
-										<option value="CC">Cédula de Ciudadanía</option>
-										<option value="CE">Cédula de extranjería</option>
-										<option value="TI">Tarjeta de identidad</option>
-										<option value="NIT">NIT</option>
-										<option value="RUT">RUT</option>
-								    </select>
-								</p>
-								<p><input type="text" placeholder="Número"></p>								
-								<p><select name="Departamento">
-										<option value="1">Seleccione su departamento de residencia</option>
-										<option value="CC">Cédula de Ciudadanía</option>					
-								    </select>
-								</p>
-								<p>
-								<select name="Municipio">
-									<option value="1">Seleccione su municipio de residencia</option>
-									<option value="CC">Cédula de Ciudadanía</option>					
-								</select>
-								</p>
-								<p><input type="text" placeholder="Dirección"></p>
-								<p><input type="text" placeholder="Actividad económica"></p>
-								<p><input type="text" placeholder="Profesión/Oficio"></p>
-								<textarea rows="9" cols="90" placeholder="¿Por qué quieres vender tus productos con nosotros?"></textarea>
-								<p><input type="submit" value="Registrar Datos"></p>
-							</form>
-						</div>
+						<p>Accede a mejores oportunidades para vender tus productos</p>
+						<h1>Regístrate</h1>
 					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end breadcrumb section -->
+	
+	<!-- breadcrumb-section -->
+	<div class="featured-text">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 text-center">
+					<div class="breadcrumb-text">
+						<div class="coupon-section">
+							<h2 class="pb3">Formulario de registro</h2>
+								<div class="coupon-form-wrap">
+									<form action="index.html">
+										<p><input type="text" placeholder="Nombres"></p>
+										<p><input type="text" placeholder="Apellidos"></p>
+										<p><input type="text" placeholder="Edad"></p>
+										<p><select name="tipoId" id="tipoId" class="js-example-placeholder-single js-states form-control">																								
+												<option value="">Seleccione su tipo de documento de identidad</option>		
+												<option value="CC">Cédula de Ciudadanía</option>
+												<option value="CE">Cédula de extranjería</option>
+												<option value="TI">Tarjeta de identidad</option>
+												<option value="NIT">NIT</option>
+												<option value="RUT">RUT</option>
+											</select>											
+										</p>
+										<p><input type="text" placeholder="Número"></p>								
+										<p><select name="departamento" id="departamento" class="js-example-placeholder-single js-states form-control">
+												<option value="">Seleccione su departamento de residencia</option>												
+												<option value = "Amazonas">Amazonas</option>
+												<option value = "Antioquia">Antioquia</option>
+												<option value = "Arauca">Arauca</option>
+												<option value = "Atlántico">Atlántico</option>
+												<option value = "Bolívar">Bolívar</option>
+												<option value = "Boyacá">Boyacá</option>
+												<option value = "Caldas">Caldas</option>
+												<option value = "Caquetá">Caquetá</option>
+												<option value = "Casanare">Casanare</option>
+												<option value = "Cauca">Cauca</option>
+												<option value = "Cesar">Cesar</option>
+												<option value = "Chocó">Chocó</option>		            
+												<option value = "Córdoba">Córdoba</option>
+												<option value = "Cundinamarca">Cundinamarca</option>
+												<option value = "Guainía">Guainía</option>
+												<option value = "Guaviare">Guaviare</option>
+												<option value = "Huila">Huila</option>
+												<option value = "La Guajira">La Guajira</option>
+												<option value = "Magdalena">Magdalena</option>
+												<option value = "Meta">Meta</option>
+												<option value = "Nariño">Nariño</option>
+												<option value = "Norte de Santander">Norte de Santander</option>
+												<option value = "Putumayo">Putumayo</option>                
+												<option value = "Quindío">Quindío</option>  
+												<option value = "Risaralda">Risaralda</option>
+												<option value = "San Andrés y Providencia">San Andrés y Providencia</option>
+												<option value = "Santander">Santander</option>
+												<option value = "Sucre">Sucre</option>
+												<option value = "Tolima">Tolima</option>
+												<option value = "Valle del Cauca">Valle del Cauca</option>
+												<option value = "Vaupés">Vaupés</option>
+												<option value = "Vichada">Vichada</option>					
+											</select>
+										</p>
+										<p>
+										<select name="municipio" id="municipio" class="js-example-placeholder-single js-states form-control">
+											<option value="1">Seleccione su municipio de residencia</option>
+											<option value="CC">Cédula de Ciudadanía</option>					
+										</select>
+										</p>
+										<p><input type="text" placeholder="Dirección"></p>
+										<p><input type="text" placeholder="Actividad económica"></p>
+										<p><input type="text" placeholder="Profesión/Oficio"></p>
+										<p><textarea rows="10" cols="96" placeholder="¿Por qué quieres vender tus productos con nosotros?"></textarea></p>
+										<p><input type="submit" value="Registrar Datos"></p>
+									</form>
+								</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -168,119 +215,9 @@
 	</div>
 	<!-- end breadcrumb section -->
 
-	<!-- latest news -->
-	<!--<div class="latest-news mt-150 mb-150">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-4 col-md-6">
-					<div class="single-latest-news">
-						<a href="single-news.html"><div class="latest-news-bg news-bg-1"></div></a>
-						<div class="news-text-box">
-							<h3><a href="single-news.html">You will vainly look for fruit on it in autumn.</a></h3>
-							<p class="blog-meta">
-								<span class="author"><i class="fas fa-user"></i> Admin</span>
-								<span class="date"><i class="fas fa-calendar"></i> 27 December, 2019</span>
-							</p>
-							<p class="excerpt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus laborum autem, dolores inventore, beatae nam.</p>
-							<a href="single-news.html" class="read-more-btn">read more <i class="fas fa-angle-right"></i></a>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6">
-					<div class="single-latest-news">
-						<a href="single-news.html"><div class="latest-news-bg news-bg-2"></div></a>
-						<div class="news-text-box">
-							<h3><a href="single-news.html">A man's worth has its season, like tomato.</a></h3>
-							<p class="blog-meta">
-								<span class="author"><i class="fas fa-user"></i> Admin</span>
-								<span class="date"><i class="fas fa-calendar"></i> 27 December, 2019</span>
-							</p>
-							<p class="excerpt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus laborum autem, dolores inventore, beatae nam.</p>
-							<a href="single-news.html" class="read-more-btn">read more <i class="fas fa-angle-right"></i></a>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6">
-					<div class="single-latest-news">
-						<a href="single-news.html"><div class="latest-news-bg news-bg-3"></div></a>
-						<div class="news-text-box">
-							<h3><a href="single-news.html">Good thoughts bear good fresh juicy fruit.</a></h3>
-							<p class="blog-meta">
-								<span class="author"><i class="fas fa-user"></i> Admin</span>
-								<span class="date"><i class="fas fa-calendar"></i> 27 December, 2019</span>
-							</p>
-							<p class="excerpt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus laborum autem, dolores inventore, beatae nam.</p>
-							<a href="single-news.html" class="read-more-btn">read more <i class="fas fa-angle-right"></i></a>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6">
-					<div class="single-latest-news">
-						<a href="single-news.html"><div class="latest-news-bg news-bg-4"></div></a>
-						<div class="news-text-box">
-							<h3><a href="single-news.html">Fall in love with the fresh orange</a></h3>
-							<p class="blog-meta">
-								<span class="author"><i class="fas fa-user"></i> Admin</span>
-								<span class="date"><i class="fas fa-calendar"></i> 27 December, 2019</span>
-							</p>
-							<p class="excerpt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus laborum autem, dolores inventore, beatae nam.</p>
-							<a href="single-news.html" class="read-more-btn">read more <i class="fas fa-angle-right"></i></a>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6">
-					<div class="single-latest-news">
-						<a href="single-news.html"><div class="latest-news-bg news-bg-5"></div></a>
-						<div class="news-text-box">
-							<h3><a href="single-news.html">Why the berries always look delecious</a></h3>
-							<p class="blog-meta">
-								<span class="author"><i class="fas fa-user"></i> Admin</span>
-								<span class="date"><i class="fas fa-calendar"></i> 27 December, 2019</span>
-							</p>
-							<p class="excerpt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus laborum autem, dolores inventore, beatae nam.</p>
-							<a href="single-news.html" class="read-more-btn">read more <i class="fas fa-angle-right"></i></a>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6">
-					<div class="single-latest-news">
-						<a href="single-news.html"><div class="latest-news-bg news-bg-6"></div></a>
-						<div class="news-text-box">
-							<h3><a href="single-news.html">Love for fruits are genuine of John Doe</a></h3>
-							<p class="blog-meta">
-								<span class="author"><i class="fas fa-user"></i> Admin</span>
-								<span class="date"><i class="fas fa-calendar"></i> 27 December, 2018</span>
-							</p>
-							<p class="excerpt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus laborum autem, dolores inventore, beatae nam.</p>
-							<a href="single-news.html" class="read-more-btn">read more <i class="fas fa-angle-right"></i></a>
-						</div>
-					</div>
-				</div>
-			</div>
 
-			<div class="row">
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-12 text-center">
-							<div class="pagination-wrap">
-								<ul>
-									<li><a href="#">Prev</a></li>
-									<li><a href="#">1</a></li>
-									<li><a class="active" href="#">2</a></li>
-									<li><a href="#">3</a></li>
-									<li><a href="#">Next</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>-->
-	<!-- end latest news -->
-
-<!-- logo carousel -->
-	<div class="logo-carousel-section">
+	<!-- logo carousel -->
+<!--<div class="logo-carousel-section">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
@@ -302,6 +239,10 @@
 						</div>
 						<div class="single-logo-item">
 							<img src="assets/img/company-logos/olimpica.webp" alt="">
+
+						</div>
+						<div class="single-logo-item">
+							<img src="assets/img/company-logos/2.png" alt="">
 						</div>
 						<div class="single-logo-item">
 							<img src="assets/img/company-logos/3.png" alt="">
@@ -316,7 +257,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div>-->
 	<!-- end logo carousel -->
 
 	<!-- footer -->
@@ -334,7 +275,7 @@
 						<h2 class="widget-title">Encuéntranos</h2>
 						<ul>
 							<li>Ramiriquí Boyacá Colombia</li>
-							<li>info@Campesinapp.com</li>
+							<li>info@campesinapp.com</li>
 							<li>+57 300 200 1000</li>
 						</ul>
 					</div>
@@ -344,10 +285,10 @@
 						<h2 class="widget-title">Enlaces</h2>
 						<ul>
 							<li><a href="index.html">Inicio</a></li>
-							<li><a href="about.html">Socios</a></li>
-							<li><a href="services.html">Mercados</a></li>
-							<li><a href="news.html">Vincúlate</a></li>
-							<li><a href="news.html">Nosotros</a></li>
+							<li><a href="socios.html">Socios</a></li>
+							<li><a href="mercados.html">Mercados</a></li>
+							<li><a href="vinculate.html">Vincúlate</a></li>
+							<li><a href="nosotros.html">Nosotros</a></li>
 							<li><a href="contact.html">Contacto</a></li>
 						</ul>
 					</div>
@@ -372,7 +313,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6 col-md-12">
-					<p>Copyrights &copy; 2025 - <a href="https://Campesinapp.com/">Campesinapp</a>,  Todos los derechos reservados.</p>
+					<p>Copyrights &copy; 2026 - <a href="https://Campesinapp.com/">Campesinapp</a>,  Todos los derechos reservados.</p>
 				</div>
 				<div class="col-lg-6 text-right col-md-12">
 					<div class="social-icons">
@@ -390,8 +331,6 @@
 	</div>
 	<!-- end copyright -->
 	
-	<!-- jquery -->
-	<script src="assets/js/jquery-1.11.3.min.js"></script>
 	<!-- bootstrap -->
 	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
 	<!-- count down -->
@@ -410,5 +349,11 @@
 	<script src="assets/js/sticker.js"></script>
 	<!-- main js -->
 	<script src="assets/js/main.js"></script>
+
+	<script>
+		$(document).ready(function() {
+		$('.js-example-placeholder-single').select2();
+		});
+	</script>
 
 </body>
